@@ -1,12 +1,12 @@
-title: notenote.link
-name: My linked notebook
-user_description: notenote.link
-notes_url: "https://notenote.link.netlify.app"
-profile_pic: /assets/img/profile.png
-favicon: /assets/img/favicon.png
-copyright_name: MIT
+title: Notes & Thoughts
+name: Karan Dhingra
+user_description: Machine Learning | Explainability Artificial Intelligence | Natural Language Processing
+notes_url: "https://itskd.github.io"
+profile_pic: /_assets/img/profile.png
+favicon: /_assets/img/favicon.ico
+copyright_name: Karan Dhingra @2022
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://notenote.link.netlify.app/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://itskd.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 encoding: utf-8
 
 # Build settings
@@ -19,12 +19,25 @@ plugins:
 
 markdown: kramdown
 
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - Procfile
+  - Rakefile
+
+scholar:
+  style: ./ieee.cls
+
 kramdown:
-  input: GFM
-  hard_wrap: false
-  math_engine: null
-  smart_quotes: ["apos", "apos", "quot", "quot"]
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 0
 
 
 sass:
