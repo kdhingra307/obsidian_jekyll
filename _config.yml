@@ -65,3 +65,4 @@ defaults:
     values:
       layout: post
       content-type: notes
+      permalink: /posts/:title
