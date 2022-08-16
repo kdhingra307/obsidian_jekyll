@@ -27,6 +27,9 @@ exclude:
   - Procfile
   - Rakefile
 
+include:
+  - _assets
+
 scholar:
   style: ./ieee.cls
 
