@@ -1,8 +1,7 @@
 
 
 {%- if page.permalink == "/" -%}
-    {%- for item in site.notes -%}
-        {%- if item.season == 'summer' -%}
+    {%- for item in site.posts -%}
         <div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
             <a href="{{item.url}}" style="text-decoration: none; color: #555555;">
             {%- if item.status == "Ongoing" or item.status == "ongoing" -%}
@@ -19,9 +18,8 @@
             <p class="feed-excerpt">{{ item.content | strip_html | strip | escape | truncate: 100}}</p>
             </a>
         </div>
-        {%- endif -%}
     {%- endfor -%}
-    {%- for item in site.notes -%}
+    {%- for item in site.posts -%}
         {%- if item.season == 'spring' -%}
         <div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
             <a href="{{item.url}}" style="text-decoration: none; color: #555555;">
@@ -64,7 +62,7 @@
 {%- endif -%}
 
 {%- if page.permalink == "/notes" -%}
-{%- for item in site.notes -%}
+{%- for item in site.posts -%}
 <div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
     <a href="{{item.url}}" style="text-decoration: none; color: #333333;">
         <p class="feed-title">{{ item.title }}</p>
