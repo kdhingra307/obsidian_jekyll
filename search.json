@@ -9,6 +9,6 @@
       "url"      : "{{ post.url }}",
       "content"  : {{ post.content | strip_html | strip_newline | strip | jsonify }}
 
-    },
+    }{% if forloop.last == false %},{% endif %}
   {% endfor %}
 ]
