@@ -1466,3 +1466,63 @@ label.margin-toggle:not(.sidenote-number) {
 [id]:hover > a {
     display: inline;
 }
+
+pre { 
+  padding : 5px;
+}
+
+code table{
+  margin-bottom: 2px;
+  tr {
+    border-top : 0px;
+    th {
+      border: 0px;
+    }
+    td {
+      border: 0px;
+    }
+  }
+  
+}
+
+
+
+
+table {
+  padding: 0;
+  word-break: initial;
+
+  tr { 
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+
+    th {
+      font-weight: bold;
+      border: 1px solid #dfe2e5;
+      border-bottom: 0;
+      margin: 0;
+      padding: 6px 13px;
+    }
+    td {
+      border: 1px solid #dfe2e5;
+      margin: 0;
+      padding: 6px 13px;
+    }
+    th:first-child, td:first-child {
+      margin-top: 0;
+    }
+    th:last-child, td:last-child {
+      margin-bottom: 0;
+    
+    }
+  }
+  tr:nth-child(2n), thead {
+    background-color: #f8f8f8;
+  }
+}
+
+img {
+    display: block
+    margin: auto
+}
