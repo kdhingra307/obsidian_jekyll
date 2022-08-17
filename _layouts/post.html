@@ -15,12 +15,14 @@
     <meta content="{{ page.title }}" property="og:title">
     <meta content="article" property="og:type">
     <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <title>{{page.title}}</title>
     {%- else -%}
     <meta content="website" property="og:type">
     <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <title>{{site.title}}</title>
     {%- endif -%}
 
-    <title>{{site.title}}</title>
+    
 
     <link rel="canonical" href="{{site.url}}{{page.url}}"/>
     <link rel="apple-touch-icon" href="{{site.profile_pic}}">
@@ -33,10 +35,12 @@
 
     <script>
         MathJax = {
+            options: {
+                skipHtmlTags: {'[-]': ['code', 'pre']},
+            },
             tex: {
                 inlineMath: [ ['$','$'] ],
                 process_escape : true,
-                skipTags: ["script","noscript","style","textarea"]
             },
             svg: {
                 fontCache: 'global'
