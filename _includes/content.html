@@ -1,10 +1,5 @@
-<!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly -->
 {%- if page.content-type == "notes" -%}
 <ul class="tags">
-    {%- if page.etat != nil and page.etat != empty -%}
-    <li><a href="javascript:void(0)" class="tag"><b>État:</b> <i>{{page.etat | capitalize}}</i></a></li>
-    {%- endif -%}
-    <!-- Loop through page categories and print them in tags -->
     {%- if page.tags != empty and page.tags !=nil -%}
     {%- for tag in page.tags -%}
     <li><a href="/tags/#{{ tag }}" class="tag">{{ tag }}</a></li>
@@ -14,7 +9,6 @@
 {%- endif -%}
 {%- include toc.html -%}
 <div class="content">
-
     {%- assign content_array = content | split:'[[' -%}
     {%- assign external_link_delimiter = '::' -%}
     {%- assign internal_link_delimiter = '|' -%}
@@ -191,44 +185,6 @@
 
     {%- assign sideNoteCounter = 0 -%}
     {%- assign srsCounter = 0 -%}
-    {%- for title in external_link_array -%}
-    {%- assign url = external_url_array[forloop.index0] -%}
-    {%- if url contains "wikipedia.org" -%}
-    {%- assign link_text = '<a href="' | append: url | append: '">' | append: title | append: '<sup ><i class="fa fa-wikipedia-w"></i>
-</sup></a>' -%}
-    {%- elsif url contains "archive.org" -%}
-    {%- assign link_text = '<a href="' | append: url | append: '">' | append: title | append: '<sup >Wayback</sup></a>' -%}
-    {%- elsif url contains "gutenberg.org" -%}
-    {%- assign link_text = '<a href="' | append: url | append: '">' | append: title | append: '<sup >Guten</sup></a>' -%}
-    {%- elsif url contains "youtube.com" or url contains "youtu.be" -%}
-    {%- assign link_text = '<a href="' | append: url | append: '">' | append: title | append: '<sup ><i class="fa fa-youtube"></i></sup></a>' -%}
-    {%- elsif url contains "twitter.com" -%}
-    {%- assign link_text = '<a href="' | append: url | append: '">' | append: title | append: '<sup ><i class="fa fa-twitter"></i></sup></a>' -%}
-    {%- elsif url contains "github.com" or url contains "github.io" -%}
-    {%- assign link_text = '<a href="' | append: url | append: '">' | append: title | append: '<sup ><i class="fa fa-github"></i></sup></a>' -%}
-    {%- elsif url == "highlight" -%}
-    {%- assign link_text = '<span style="background-color: #DAEDFF; color: #555;">' | append: title | append: '</span>' -%}
-    {%- elsif url == "wrap" -%}
-    {%- assign link_text = '<div class="boxit">' | append: title | append: '</div>' -%}
-    {%- elsif url == "img" -%}
-    {%- assign link_text = '<img src="' | append: title | append: '"/>' -%}
-    {%- elsif url == "lsn" or url == "rsn" or url == "lsn-transclude" or url == "rsn-transclude"  or url == "lmn" or url == "rmn" or url == "lmn-transclude" or url == "rmn-transclude" -%}
-    {%- assign toggleLabel = "" -%}
-    {%- assign sideNoteNum = "" -%}
-    {%- if url contains "lsn" -%}
-    {%- assign noteType = "sn-left" -%}
-    {%- assign sideNoteNum = "sidenote-number" -%}
-    {%- elsif url contains "rsn" -%}
-    {%- assign noteType = "sn-right" -%}
-    {%- assign sideNoteNum = "sidenote-number" -%}
-    {%- elsif url contains "lmn" -%}
-    {%- assign noteType = "mn-left" -%}
-    {%- assign toggleLabel = "&#8853;" -%}
-    {%- elsif url contains "rmn" -%}
-    {%- assign noteType = "mn-right" -%}
-    {%- assign toggleLabel = "&#8853;" -%}
-    {%- endif -%}
-
 
     {%- if url contains "transclude" -%}
     {%- assign post = site.notes | where: 'title',title -%}

@@ -1,4 +1,3 @@
-
 <header>
     <div class="dashboard disable-select">
         <div class="site-heading profile-board-col">
@@ -6,17 +5,17 @@
         </div>
         <div class="userboard profile-board-col">
             <div class="username">
-                <p class="title-sans"><a href="/" style="text-decoration: none;">{{site.name}}</a></p>
+                <p class="title-sans"><a href="/" style="text-decoration: none;">{{site.user.name}}</a></p>
             </div>
             <div class="userdesc">
-                <p class="title-sans">{{site.user_description}}</p>
+                <p class="title-sans">{{site.user.bio}}</p>
             </div> 
 
         </div>
     </div>
     <div class="avatar disable-select" title="click me to know more">
         <a class="avatar-link" href="/">
-            <img src="/data/img/profile.png" class="avatar-img" alt="avatar"/>
+            <img src="{{site.user.photo}}" class="avatar-img" alt="avatar"/>
         </a>
     </div>
     <div class="main-site-subheader menu disable-select">
@@ -101,13 +100,20 @@
     {%- endif -%}
 
     <script type="text/x-mathjax-config">
-   MathJax.Hub.Config({
-       tex2jax: {
-           inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
-           displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
-           processEscapes: true
-               }
-           });
-</script>
+        MathJax.Hub.Config({
+            extensions: [
+             "tex2jax.js",  // HERE
+             "MathMenu.js",
+             "MathZoom.js",
+             "AssistiveMML.js",
+             "a11y/accessibility-menu.js"
+            ],
+           tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            process_escape : true,
+            skipTags: ["script","noscript","style","textarea"]
+            }
+        });
+    </script>
 
 </header>
