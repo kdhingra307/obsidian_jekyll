@@ -2,7 +2,7 @@
 ---
 
 [
-  {% for note in site.notes %}
+  {% for note in site.posts %}
     {
 
       "title"    : "{{ note.title | strip_html | escape }}",

@@ -3,7 +3,7 @@ user:
   name: Karan Dhingra 
   bio: Machine Learning | Explainability Artificial Intelligence | Natural Language Processing 
   email: kdhingra307@gmail.com 
-  photo: assets/img/profile.png
+  photo: /assets/img/profile.png
   social: # just leave the field blank or type in null, if you don't have a
           # particular social media account and it won't appear
   enabled: true
@@ -13,7 +13,6 @@ user:
 
 notes_url: "https://kdhingra307.github.io"
 favicon: /assets/img/favicon.ico
-copyright_name: Karan Dhingra @2022
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://kdhingra307.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 encoding: utf-8
