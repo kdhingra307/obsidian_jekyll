@@ -127,8 +127,10 @@ b, strong {
 /* Figures, Images, Code, Blockquotes, Tables */
 
 img {
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
+    width: auto;
+    max-height: 256px;
 }
 
 
