@@ -6,10 +6,10 @@ user:
   photo: /assets/img/profile.png
   social: # just leave the field blank or type in null, if you don't have a
           # particular social media account and it won't appear
-  enabled: true
-  twitter: kdhingra307
-  github: kdhingra307
-  linkedin: kdhingra307
+    enabled: true
+    twitter: kdhingra307
+    github: kdhingra307
+    linkedin: kdhingra307
 
 notes_url: "https://kdhingra307.github.io"
 favicon: /assets/img/favicon.ico
