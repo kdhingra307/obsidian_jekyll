@@ -34,6 +34,8 @@ exclude:
   - Gemfile.lock
   - Procfile
   - Rakefile
+  - Excalidraw
+  - "Day Planners"
 
 include:
   - _assets
